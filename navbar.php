@@ -12,7 +12,7 @@
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">change the password</a></li>
-      <li><a href="#">List of other sessions</a></li>
+      <li><a href="UserSessions.php">List of other sessions</a></li>
       <li><a href="logout.php">LogOut</a></li>
     </ul>
   </nav>
@@ -38,6 +38,11 @@
           if (data == "someone") 
           {
             $(".warning-box").show();
+          }
+
+          if (data == "SessionISover") 
+          {
+            window.location.href = 'logout.php?ByEndingTheSession=yes';
           }
         }
      });

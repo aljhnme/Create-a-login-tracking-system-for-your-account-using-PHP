@@ -42,4 +42,12 @@ if ($_POST['action'] == 'login')
     }
 }
 
+if ($_POST['action'] == "logoutOfTheSession") 
+{
+  $query = 'DELETE FROM `log-ofuserslogin` WHERE LoginID = :LoginID';
+
+  $statement = $conn->prepare($query);
+  $statement->execute([':LoginID' => $_POST['sessionID']]);
+}
+
 ?>

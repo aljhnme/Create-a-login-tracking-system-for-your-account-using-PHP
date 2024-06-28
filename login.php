@@ -23,6 +23,22 @@
      <input type="password" name="password" id="password" placeholder="Password" required>
      <br>
      <input type="submit" value="login" id="login">
+     <br>
+     <br>
+     <br>
+     <?php
+      if (isset($_SERVER['HTTP_REFERER'])) {
+          
+          $referrer = $_SERVER['HTTP_REFERER'];
+          if (strpos($referrer,'logout.php') !== true) {
+               
+             if (isset($_GET['SessionHasEnded'])) 
+             {
+                echo '<div class="alert">The session has expired</div>';
+             }
+          }
+      }
+     ?>
  </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
